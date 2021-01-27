@@ -1,0 +1,32 @@
+body {
+    background-color: #444444;
+}
+
+.title {
+    color: orange;
+    max-width: min-content;
+    max-height: min-content;
+    margin: auto;
+    font-size: 500%;
+}
+
+.gource_form_inputs {
+    display: block;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: 10% auto 0;
+}
+
+.gource_form_input {
+    display: block;
+    max-width: max-content;
+    max-height: max-content;
+    margin: auto;
+}
+
+.gource_form_button_add {
+    display: block;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: auto;
+}
