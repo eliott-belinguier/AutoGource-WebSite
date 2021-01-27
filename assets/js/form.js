@@ -63,3 +63,5 @@ class FormManager {
 }
 
 const FORM_MANAGER = new FormManager('inputs');
+
+export default FORM_MANAGER;
