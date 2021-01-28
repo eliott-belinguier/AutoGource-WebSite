@@ -1,3 +1,7 @@
+<?php
+if (!isset($_COOKIE['session']))
+    setcookie("session", time() + rand(0, 1000));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
 </head>
 <body>
 <h1 class="title">AutoGource</h1>
-<form id="gource_form" class="gource_form">
+<form id="gource_form" class="gource_form" method="post" action="upload">
     <div class="gource_form_inputs" id="inputs">
 
     </div>
@@ -36,6 +40,7 @@
         </svg>
     </button>
     <label for="send">Send !</label>
+    <p class="error_message" id="error_message"></p>
     <template id="input_template">
         <div class="gource_form_input">
             <button type="button">
@@ -47,7 +52,7 @@
                 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/>
                 </svg>
             </button>
-            <input type="text"/>
+            <input type="text" required/>
         </div>
     </template>
 </form>

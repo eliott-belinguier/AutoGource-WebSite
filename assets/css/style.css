@@ -30,3 +30,8 @@ body {
     max-height: fit-content;
     margin: auto;
 }
+
+.error_message {
+    color: red;
+    font-weight: bold;
+}

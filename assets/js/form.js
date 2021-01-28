@@ -49,16 +49,41 @@ class FormManager {
     }
 
     deleteElement(id) {
-        this.elements = this.elements.filter(item => {
-            if (item.id != id)
+        this.elements = this.elements.filter(element => {
+            if (element.id != id)
                 return true;
-            item.setText("remove !");
-            const elementToDelete = document.getElementById('input_' + item.id);
+            const elementToDelete = document.getElementById('input_' + element.id);
             if (elementToDelete == null)
                 return false;
             elementToDelete.remove();
             return false;
-        })
+        });
+        return false;
+    }
+
+    clear() {
+        this.elements.forEach(element => {
+            const elementToDelete = document.getElementById('input_' + element.id);
+            if (elementToDelete != null)
+                elementToDelete.remove();
+        });
+    }
+
+    toJson() {
+        const result = [];
+
+        this.elements.forEach(element => {
+            result.push(element.getText());
+        });
+        return result;
+    }
+
+    containEmpty() {
+        this.elements.forEach(element => {
+            if (element.getText() == null || element.getText().length < 1)
+                return true;
+        });
+        return false;
     }
 }
 
